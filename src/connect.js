@@ -32,18 +32,20 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 export const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponent) => {
     class Connect extends Component {
-        constructor() {
-            super();
-            this.state = {
-                allProps: {}
-            };
-        }
         // context 约束必须
         static contextTypes = {
             store: PropTypes.object
         };
+        constructor(context) {
+            super(context);
+            this.state = {
+                allProps: {}
+            };
+        }
+        
         // 组件挂在前需要执行的操作
         componentWillMount() {
+            console.log('11', this.context)
             const {store} = this.context; // 从上下文中获取 store 该 store 是从根组件传递过来的
             this._updateProps();// 初始化执行一次 updateProps
             store.subscribe(() => this._updateProps()); // 加入观察者
