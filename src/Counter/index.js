@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import ReactContext from '../context'
 // import {connect} from "../connect.js";
 import { increase, decrease } from "../models/counter/action.js";
 
