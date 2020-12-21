@@ -8,8 +8,8 @@ import Counter from './Counter';
 import store from './store'
 
 // import { Provider } from 'react-redux';
-import { Provider } from './react-redux';
-// import Provider from './Provider';
+// import { Provider } from './react-redux';
+import Provider from './Provider';
 
 import reportWebVitals from './reportWebVitals';
 

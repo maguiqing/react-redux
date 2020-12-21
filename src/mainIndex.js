@@ -5,16 +5,16 @@ import PropTypes from 'prop-types'
 import store from './store'
 
 class Index extends Component {
-    static childContextTypes = {
-        store: PropTypes.object
-    }
-    getChildContext() {
-        return { store }
-    }
+    // static childContextTypes = {
+    //     store: PropTypes.object
+    // }
+    // getChildContext() {
+    //     return { store }
+    // }
     render() {
         return (
             <div>
-                <Header />
+                <Header/>
                 <Content />
             </div>
         )

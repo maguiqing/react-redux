@@ -1,9 +1,7 @@
 
 
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-
-const StoreContext = React.createContext(null)
+import ReduxContext from './context'
 
 export function connect(mapStateToProps, mapDispatchToProps) {
     return function (WrapComponent) {
@@ -16,20 +14,20 @@ export function connect(mapStateToProps, mapDispatchToProps) {
         }
   
         componentDidMount() {
-          const { store } = this.context
+          const { store } = this.props
           store.subscribe(() => this.update())
           this.update()
         }
   
         update() {
-          const { store } = this.context
+          const { store } = this.props
           let stateToProps = mapStateToProps(store.getState())
           let dispatchToProps
           if (typeof mapDispatchToProps === 'function') {
             dispatchToProps = mapDispatchToProps(store.dispatch)
           } else {
             // 传递了一个 actionCreator 对象过来
-            dispatchToProps = bindActionCreators(mapDispatchToProps, store.dispatch)
+            dispatchToProps = {}
           }
   
           this.setState({
@@ -47,9 +45,14 @@ export function connect(mapStateToProps, mapDispatchToProps) {
       }
       
       return () => (
-        <StoreContext.Consumer>
-          {value => <ConnectComponent store={value} />}
-        </StoreContext.Consumer>
+        
+        <ReduxContext.Consumer>
+          {
+          value => {
+            return  <ConnectComponent store={value} />
+          }
+         }
+        </ReduxContext.Consumer>
       )
     }
   }
