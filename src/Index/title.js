@@ -6,7 +6,7 @@ class Title extends Component {
       }
     render () {
       return (
-        <h1 style={{ color: this.context.themeColor }}>React.js 小书标题</h1>
+        <h1 style={{ color: this.context.themeColor }}>React-redux 标题</h1>
       )
     }
   }

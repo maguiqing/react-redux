@@ -4,7 +4,7 @@ class Content extends Component {
     render () {
       return (
       <div>
-        <h2>React.js 小书内容</h2>
+        <h2>React-redux 内容</h2>
       </div>
       )
     }

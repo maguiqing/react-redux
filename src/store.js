@@ -5,6 +5,7 @@ function createStore(reducer) {
   const getState = () => state
   const dispatch = (action) => {
     state = reducer(state, action)
+    // console.log('listeners', listeners)
     listeners.forEach((listener) => listener())
   }
   dispatch({}) // 初始化 state
