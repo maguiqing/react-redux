@@ -28,8 +28,8 @@ class Content extends Component {
                 <p style={{ color: this.state.themeColor }}>content: React-redux</p>
                 <ThemeSwitch />
                  {/* <p style={{ color: this.props.themeColor }}>content: React-redux</p>
-                <ThemeSwitch />
-                 */}
+                <ThemeSwitch /> */}
+                
             </div>
         )
     }

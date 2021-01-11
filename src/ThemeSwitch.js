@@ -12,11 +12,11 @@ class ThemeSwitch extends Component {
         onSwitchColor: PropTypes.func
     }
 
-    // handleSwitchColor(color) {
-    //     if (this.props.onSwitchColor) {
-    //         this.props.onSwitchColor(color)
-    //     }
-    // }
+    handleSwitchColor(color) {
+        if (this.props.onSwitchColor) {
+            this.props.onSwitchColor(color)
+        }
+    }
 
     constructor() {
         super()

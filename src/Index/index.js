@@ -11,7 +11,7 @@ class Index extends Component {
       this.state = { themeColor: 'red' }
     }
     componentWillMount () {
-        // this.setState({ themeColor: 'green' })
+        this.setState({ themeColor: 'green' })
     }
     getChildContext () {
       return { themeColor: this.state.themeColor }
